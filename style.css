@@ -1,0 +1,40 @@
+.ocean {
+  background-image: url(img/sky.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+.hero-plane {
+  background-size: contain;
+  position: absolute;
+  background-image: url(img/Hero\ Plane.png);
+  width: 98px;
+  height: 78px;
+}
+.plane1 {
+  background-image: url(img/Plane1.png);
+  width: 84px;
+  height: 87px;
+}
+.plane2 {
+  background: url(img/plane2.png);
+  width: 114px;
+  height: 86px;
+}
+.plane3 {
+  background-image: url(img/plane3.png);
+  width: 53px;
+  height: 78px;
+}
+.plane4 {
+  background-image: url(img/plane4.png);
+  width: 91px;
+  height: 80px;
+}
+.plane1,
+.plane2,
+.plane3,
+.plane4 {
+  background-size: contain;
+  position: absolute;
+}
