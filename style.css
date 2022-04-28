@@ -2,7 +2,7 @@
   background-image: url(img/sky.jpg);
   background-size: cover;
   width: 100%;
-  height: 100vh;
+  height: 95vh;
 }
 .hero-plane {
   background-size: contain;

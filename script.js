@@ -1,6 +1,9 @@
 let ocean = document.querySelector(".ocean");
 let heroPlayer = document.querySelector(".hero-player");
 let enemies = document.querySelector(".enemies");
+let content;
+let maxTop = 600;
+let maxLeft = 1400;
 
 let heroPlane = {
   left: 710,
@@ -14,7 +17,7 @@ let enemy = [
   { left: 1100, top: 250 },
 ];
 
-let content;
+
 function drawHeroPlane (){
     content = "<div class='hero-plane'; style='left:" + heroPlane.left + "px; top:" + heroPlane.top +"px'></div>";
     heroPlayer.innerHTML = content;
@@ -32,19 +35,19 @@ drawEnemies();
 
 document.onkeydown = function (e){
 console.log(e.keyCode);
-    if (e.keyCode == 39) // right
+    if (e.keyCode == 39 && heroPlane.left < maxLeft) // right
     {
         heroPlane.left += 10;
     }
-    else if (e.keyCode == 37) // left
+    else if (e.keyCode == 37 && heroPlane.left > 20 ) // left
     {
         heroPlane.left -= 10;
     }
-    else if (e.keyCode == 38)  //top
+    else if (e.keyCode == 38 && heroPlane.top > 20)  //top
     {
         heroPlane.top -= 10;
     }
-    else if (e.keyCode == 40)  //bottom
+    else if (e.keyCode == 40 && heroPlane.top < maxTop)  //bottom
     {
         heroPlane.top += 10;
     }
