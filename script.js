@@ -3,7 +3,7 @@ let heroPlayer = document.querySelector(".hero-player");
 let enemies = document.querySelector(".enemies");
 let missilesClass = document.querySelector(".missiles");
 let content;
-let maxTopHero = 600;
+let maxTopHero = 400;
 let maxLeft = 1400;
 let maxTopEnemy=570;
 
@@ -33,6 +33,13 @@ function drawEnemies(){
     }
     enemies.innerHTML = content;
 }
+function moveEnemies(){
+    for (let i=0; i<enemy.length; i++){
+        if (enemy[i].top<maxTopEnemy){
+            enemy[i].top += .8;
+        }
+    }
+}
 function drawMissiles(){
     content = "";
     for (let i=0; i<missiles.length;i++){
@@ -43,27 +50,21 @@ function drawMissiles(){
 function moveMissiles(){
     for (let i=0; i<missiles.length;i++)
     {
-        missiles[i].top-=30;
+        missiles[i].top-=4;
     }
 }
 
-function moveEnemies(){
-    for (let i=0; i<enemy.length; i++){
-        if (enemy[i].top<maxTopEnemy){
-            enemy[i].top += 10;
-        }
-    }
-}
+
 
 document.onkeydown = function (e){
 console.log(e.keyCode);
     if (e.keyCode == 39 && heroPlane.left < maxLeft) // right
     {
-        heroPlane.left += 30;
+        heroPlane.left += 40;
     }
     else if (e.keyCode == 37 && heroPlane.left > 20 ) // left
     {
-        heroPlane.left -= 30;
+        heroPlane.left -= 40;
     }
     else if (e.keyCode == 38 && heroPlane.top > 450)  //top
     {
@@ -89,6 +90,6 @@ function gameLoop()
 
     moveMissiles();
     drawMissiles();
-    setTimeout(gameLoop, 1000);
+    setTimeout(gameLoop, 10);
 }
 gameLoop();
