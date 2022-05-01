@@ -38,3 +38,10 @@
   background-size: contain;
   position: absolute;
 }
+.missile{
+  width: 9px;
+  height: 26px;
+  background-image: url(img/bullet.png);
+  background-size: contain;
+  position: absolute;
+}
